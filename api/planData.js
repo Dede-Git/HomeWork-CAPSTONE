@@ -73,8 +73,8 @@ const updatePlan = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
-const getPinsByPlan = (firebaseKey) => new Promise((resolve, reject) => {
-  fetch(`${dbUrl}/plans.json?orderBy="Plan_id"&equalTo="${firebaseKey}"`, {
+const getWorkoutsByPlan = (firebaseKey) => new Promise((resolve, reject) => {
+  fetch(`${dbUrl}/workouts.json?orderBy="plan_id"&equalTo="${firebaseKey}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -91,5 +91,5 @@ export {
   createPlan,
   updatePlan,
   deleteSinglePlan,
-  getPinsByPlan,
+  getWorkoutsByPlan,
 };
