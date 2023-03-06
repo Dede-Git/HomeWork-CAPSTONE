@@ -1,0 +1,76 @@
+{
+  "-NN9jATC26GHHv-OYgcS": {
+    "plan_id": "",
+    "firebaseKey": "-NN9jATC26GHHv-OYgcS",
+    "image": "https://www.fitnesseducation.edu.au/wp-content/uploads/2017/03/Pushups.jpg",
+    "type": "arms",
+    "name": "Push-Ups",
+    "uid": "",
+    "level": "easy",
+    "sets": "3",
+    "reps": "5"
+  },
+  "-NN9jATC26GHHvHtKO2SF": {
+    "plan_id": "",
+    "firebaseKey": "-NN9jATC26GHHvHtKO2SF",
+    "image": "https://www.fitnesseducation.edu.au/wp-content/uploads/2017/03/Pushups.jpg",
+    "type": "arms",
+    "name": "Push-Ups",
+    "uid": "",
+    "level": "medium",
+    "sets": "3",
+    "reps": "15"
+  },
+  "-NN9jATC26GHHvPLR7D4": {
+    "plan_id": "",
+    "firebaseKey": "-NN9jATC26GHHvPLR7D4",
+    "image": "https://www.fitnesseducation.edu.au/wp-content/uploads/2017/03/Pushups.jpg",
+    "type": "arms",
+    "name": "Push-Ups",
+    "uid": "",
+    "level": "hard",
+    "sets": "3",
+    "reps": "33"
+  },
+  "-NN9jATGeyxUy29df0uW": {
+    "plan_id": "",
+    "firebaseKey": "-NN9jATGeyxUy29df0uW",
+    "image": "https://blog.myfitnesspal.com/wp-content/uploads/2021/09/mfp-proper-plank-alignment.jpg",
+    "type": "arms, abs, balance",
+    "name": "Planks",
+    "uid": "",
+    "level": "easy",
+    "sets": "3",
+    "reps": "15s"
+  },
+  "-NN9jATGeynHRY4S89K1": {
+    "plan_id": "",
+    "firebaseKey": "-NN9jATGeynHRY4S89K1",
+    "image": "https://blog.myfitnesspal.com/wp-content/uploads/2021/09/mfp-proper-plank-alignment.jpg",
+    "type": "arms, abs, balance",
+    "name": "Planks",
+    "uid": "",
+    "level": "medium",
+    "sets": "3",
+    "reps": "30s"
+  },"-NN9jATJIOp61X8Mw9Z3": {
+    "plan_id": "",
+    "firebaseKey": "-NN9jATJIOp61X8Mw9Z3",
+    "image": "https://blog.myfitnesspal.com/wp-content/uploads/2021/09/mfp-proper-plank-alignment.jpg",
+    "type": "arms, abs, balance",
+    "name": "Planks",
+    "uid": "",
+    "level": "hard",
+    "sets": "3",
+    "reps": "60s"
+  },
+  "-NN9jATJ54YVmsK46l5B": {
+    "plan_id": "",
+    "firebaseKey": "-NN9jATJ54YVmsK46l5B",
+    "image": "",
+    "type": "",
+    "name": "",
+    "uid": "",
+    "level": "easy"
+  }
+}
