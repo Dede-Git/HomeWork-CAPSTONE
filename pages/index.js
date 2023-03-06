@@ -24,8 +24,8 @@ function Home() {
     <div className="text-center my-4">
       <div className="d-flex flex-wrap">
         {/* TODO: map over workouts here using WorkoutCard component */}
-        {workouts.map((workout) => (
-          <WorkoutCard key={workout.firebaseKey} workoutObj={workout} onUpdate={getAllTheWorkouts} />
+        {workouts.map((work) => (
+          <WorkoutCard key={work.firebaseKey} workObj={work} onUpdate={getAllTheWorkouts} />
         ))}
       </div>
 
