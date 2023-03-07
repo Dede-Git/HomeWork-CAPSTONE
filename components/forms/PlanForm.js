@@ -6,14 +6,14 @@ import Head from 'next/head';
 import { useAuth } from '../../utils/context/authContext';
 import { updatePlan, createPlan } from '../../api/planData';
 
-const initialState = {
+const initialStateBF = {
   name: '',
   description: '',
   image: '',
 };
 
 export default function PlanForm({ obj }) {
-  const [formInput, setFormInput] = useState(initialState);
+  const [formInput, setFormInput] = useState(initialStateBF);
   const router = useRouter();
   const { user } = useAuth();
 
@@ -115,5 +115,5 @@ PlanForm.propTypes = {
 };
 
 PlanForm.defaultProps = {
-  obj: initialState,
+  obj: initialStateBF,
 };

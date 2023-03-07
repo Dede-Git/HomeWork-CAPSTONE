@@ -20,8 +20,8 @@ function WorkoutCard({ workObj, onUpdate }) {
       <Card.Body>
         <Card.Title>{workObj.name}</Card.Title>
         <Card.Body>{workObj.level}</Card.Body>
-        {/* <Card.Body>{workObj.sets}</Card.Body>
-        <Card.Body>{workObj.reps}</Card.Body> */}
+        <Card.Body>{workObj.sets}</Card.Body>
+        <Card.Body>{workObj.reps}</Card.Body>
         {/* DYNAMIC LINK TO VIEW THE Workout DETAILS  */}
         <Link href={`/workout/${workObj.firebaseKey}`} passHref>
           <Button variant="outline-dark" className="m-2">VIEW</Button>
