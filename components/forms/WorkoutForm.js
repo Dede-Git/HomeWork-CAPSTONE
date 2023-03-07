@@ -95,7 +95,7 @@ function WorkoutForm({ obj }) {
           <Form.Control
             type="text"
             placeholder="Enter easy, medium, or hard"
-            name="level"
+            name="Enter easy, medium, or hard"
             value={formInput.level}
             onChange={handleChange}
             required
@@ -165,7 +165,7 @@ function WorkoutForm({ obj }) {
         </FloatingLabel>
 
         {/* SUBMIT BUTTON  */}
-        <Button variant="outline-dark" className="m-2 text-color-drkblu" type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Wprkout</Button>
+        <Button variant="outline-dark" className="m-2 text-color-drkblu" type="submit">{obj.firebaseKey ? 'Update' : 'Create'} Workout</Button>
       </Form>
     </>
   );
