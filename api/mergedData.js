@@ -1,10 +1,17 @@
 import { deleteSinglePlan, getSinglePlan, getWorkoutsByPlan } from './planData';
-import { deleteSingleWorkout } from './workoutData';
+import { deleteSingleWorkout, getSingleWorkout } from './workoutData';
 
 const viewPlanDetails = (firebaseKey) => new Promise((resolve, reject) => {
   getSinglePlan(firebaseKey).then(([plan]) => {
     getWorkoutsByPlan(plan.firebaseKey)
       .then((planWorkouts) => resolve({ ...plan, planWorkouts }));
+  }).catch(reject);
+});
+
+const viewWorkoutDetails = (firebaseKey) => new Promise((resolve, reject) => {
+  getSingleWorkout(firebaseKey).then((work) => {
+    getSinglePlan(work.plan_id)
+      .then((workData) => resolve({ ...work, workData }));
   }).catch(reject);
 });
 
@@ -19,4 +26,4 @@ const deletePlanWorkouts = (planId) => new Promise((resolve, reject) => {
   }).catch((error) => reject(error));
 });
 
-export { deletePlanWorkouts, viewPlanDetails };
+export { deletePlanWorkouts, viewPlanDetails, viewWorkoutDetails };
