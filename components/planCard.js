@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, Button } from 'react-bootstrap';
 import Link from 'next/link';
-import deletePlanWorkouts from '../api/mergedData';
+import { deletePlanWorkouts } from '../api/mergedData';
 import { useAuth } from '../utils/context/authContext';
 
 export default function PlanCard({ planObj, onUpdate }) {

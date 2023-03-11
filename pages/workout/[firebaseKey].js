@@ -35,8 +35,8 @@ export default function ViewWorkout() {
           <p className="PD-desc">{workDetails.reps || ''}
           </p>
           <hr />
-          <Link href={`/plan/${workDetails.plan_id}`} passHref>
-            <Button variant="outline-dark" className="m-2">Return To Plan</Button>
+          <Link passHref href="/">
+            <Button variant="outline-dark" className="m-2">Return To Workouts</Button>
           </Link>
         </div>
       </div>

@@ -91,11 +91,11 @@ function WorkoutForm({ obj }) {
 
         {/* level  */}
         <div className="">Level</div>
-        <FloatingLabel controlId="floatingInput4" label="Workout Level" className="mb-3">
+        <FloatingLabel controlId="floatingInput4" label="Enter {easy, medium, hard}" className="mb-3">
           <Form.Control
             type="text"
-            placeholder="Enter easy, medium, or hard"
-            name="Enter easy, medium, or hard"
+            placeholder="Enter A Level"
+            name="level"
             value={formInput.level}
             onChange={handleChange}
             required

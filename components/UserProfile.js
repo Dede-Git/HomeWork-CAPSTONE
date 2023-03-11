@@ -1,4 +1,4 @@
-import Image from 'next/image';
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 import { Button } from 'react-bootstrap';
 import { useAuth } from '../utils/context/authContext';
@@ -9,7 +9,7 @@ export default function UserProfile() {
 
   return (
     <div id="profileSection">
-      <Image src={user.photoURL} alt="userURL" width="200px" height="200px" id="profilepicture" />
+      <img src={user.photoURL} alt="userURL" width="200px" height="200px" id="profilepicture" />
       <h2>{user.displayName}</h2>
       <h5>{user.email}</h5>
       <h5>Last Login: {user.metadata.lastSignInTime}</h5>
