@@ -26,21 +26,21 @@ export default function NavBar() {
               </Link>
             </li>
             <li className="nav-item">
-              <Link passHref href="/easy">
+              <Link passHref href="/workout/easy">
                 <a className="nav-link">
                   Easy
                 </a>
               </Link>
             </li>
             <li className="nav-item">
-              <Link passHref href="/medium">
+              <Link passHref href="/workout/medium">
                 <a className="nav-link">
                   Medium
                 </a>
               </Link>
             </li>
             <li className="nav-item">
-              <Link passHref href="/hard">
+              <Link passHref href="/workout/hard">
                 <a className="nav-link">
                   Hard
                 </a>

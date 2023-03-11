@@ -3,8 +3,8 @@ import { clientCredentials } from '../utils/client';
 const dbUrl = clientCredentials.databaseURL;
 
 // FIXME:  GET ALL Workouts
-const getWorkouts = (uid) => new Promise((resolve, reject) => {
-  fetch(`${dbUrl}/workouts.json?orderBy="uid"&equalTo="${uid}"`, {
+const getWorkouts = () => new Promise((resolve, reject) => {
+  fetch(`${dbUrl}/workouts.json`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
@@ -73,10 +73,26 @@ const updateWorkout = (payload) => new Promise((resolve, reject) => {
     .catch(reject);
 });
 
+const getEasyWorkouts = () => new Promise((resolve, reject) => {
+  fetch(`${dbUrl}/workouts.json?orderBy="level"&equalTo="easy"`, {
+    method: 'GET',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      const easywork = Object.values(data).filter((item) => item.easy);
+      resolve(easywork);
+    })
+    .catch(reject);
+});
+
 export {
   getWorkouts,
   getSingleWorkout,
   deleteSingleWorkout,
   updateWorkout,
   createWorkout,
+  getEasyWorkouts,
 };

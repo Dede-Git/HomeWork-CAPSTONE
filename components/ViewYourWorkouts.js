@@ -19,13 +19,11 @@ export default function ViewYourWorkouts() {
     getWorkoutsByPlan(firebaseKey);
   };
 
-  if (user.uid === planDetails.uid) {
-    return (
-      <div className="d-flex flex-wrap">
-        {planDetails.planWorkouts?.map((work) => (
-          <WorkoutCard key={work.firebaseKey} workObj={work} onUpdate={getAllWorkoutsByPlan} />
-        ))}
-      </div>
-    );
-  }
+  return (
+    <div className="d-flex flex-wrap">
+      {planDetails.planWorkouts?.map(() => (
+        <WorkoutCard key={user.firebaseKey} workObj={user} onUpdate={getAllWorkoutsByPlan} />
+      ))}
+    </div>
+  );
 }
