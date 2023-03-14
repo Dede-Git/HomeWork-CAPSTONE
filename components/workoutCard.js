@@ -19,16 +19,17 @@ function WorkoutCard({ workObj, onUpdate }) {
       <Card.Img variant="top" src={workObj.image} alt={workObj.name} style={{ height: '400px' }} />
       <Card.Body>
         <Card.Title>{workObj.name}</Card.Title>
-        <Card.Subtitle>{workObj.level}</Card.Subtitle>
-        <Card.Text>{workObj.sets}</Card.Text>
-        <Card.Text>{workObj.reps}</Card.Text>
+        <Card.Subtitle>Type: {workObj.type}</Card.Subtitle>
+        <Card.Subtitle>Level: {workObj.level}</Card.Subtitle>
+        <Card.Text>Sets: {workObj.sets}</Card.Text>
+        <Card.Text>Reps: {workObj.reps}</Card.Text>
         {/* DYNAMIC LINK TO VIEW THE Workout DETAILS  */}
         <Link href={`/workout/${workObj.firebaseKey}`} passHref>
           <Button variant="outline-dark" className="m-2">VIEW</Button>
         </Link>
         {/* DYNAMIC LINK TO EDIT THE Workout DETAILS  */}
         <Link href={`/workout/edit/${workObj.firebaseKey}`} passHref>
-          {workObj.uid === user.uid ? (<Button variant="outline-dark" className="m-2">EDIT</Button>) : '' }
+          <Button variant="outline-dark" className="m-2">EDIT</Button>
         </Link>
         <>
           {workObj.uid === user.uid ? (

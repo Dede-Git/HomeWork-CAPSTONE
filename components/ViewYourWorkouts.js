@@ -1,6 +1,6 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
-import { viewPlanDetails } from '../api/mergedData';
+import viewPlanDetails from '../api/mergedData';
 import { getWorkoutsByPlan } from '../api/planData';
 import { useAuth } from '../utils/context/authContext';
 import WorkoutCard from './WorkoutCard';
