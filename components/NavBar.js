@@ -1,80 +1,44 @@
+/* eslint-disable @next/next/no-img-element */
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React from 'react';
+import PropTypes from 'prop-types';
 import Link from 'next/link';
-import { signOut } from '../utils/auth';
+import {
+  Navbar, Container, Nav,
+} from 'react-bootstrap';
 import SearchBar from './searchBar';
 
 export default function NavBar() {
   return (
-    <nav className="navbar navbar-expand-md navbar-dark bg-dark">
-      <div className="container-fluid">
+    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+      <Container>
         <Link passHref href="/">
-          <a className="navbar-brand" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01">
-            HOMEWORK
-          </a>
+          <Navbar.Brand>HOMEWORK</Navbar.Brand>
         </Link>
-        <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01" aria-expanded="false" aria-label="Toggle navigation">
-          <span className="navbar-toggler-icon" />
-        </button>
-
-        <div className="collapse navbar-collapse" id="navbarTogglerDemo01">
-          <ul className="navbar-nav me-auto">
-            <li className="nav-item">
-              <Link passHref href="/">
-                <a className="nav-link">
-                  Workouts
-                </a>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link passHref href="/workout/easy">
-                <a className="nav-link">
-                  Easy
-                </a>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link passHref href="/workout/medium">
-                <a className="nav-link">
-                  Medium
-                </a>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link passHref href="/workout/hard">
-                <a className="nav-link">
-                  Hard
-                </a>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link passHref href="/workout/new">
-                <a className="nav-link">
-                  New Workouts
-                </a>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link passHref href="/plan/new">
-                <a className="nav-link">
-                  New Plan
-                </a>
-              </Link>
-            </li>
-            <li className="nav-item">
-              <Link passHref href="/profile">
-                <a className="nav-link">
-                  Profile
-                </a>
-              </Link>
-            </li>
-            <button type="button" className="btn btn-danger" onClick={signOut}>
-              Sign Out
-            </button>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse className="justify-content-end">
+          <Nav className="ml-auto">
+            {/* CLOSE NAVBAR ON LINK SELECTION: https://stackoverflow.com/questions/72813635/collapse-on-select-react-bootstrap-navbar-with-nextjs-not-working */}
+            <Link passHref href="/workout/new">
+              <Nav.Link>Create Workout</Nav.Link>
+            </Link>
+            <Link passHref href="/plan/new">
+              <Nav.Link>Create Plan</Nav.Link>
+            </Link>
+            <Link passHref href="/profile">
+              <Nav.Link>Profile</Nav.Link>
+            </Link>
             <SearchBar />
-          </ul>
-        </div>
-      </div>
-    </nav>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
   );
 }
+
+NavBar.propTypes = {
+  user: PropTypes.shape({
+    displayName: PropTypes.string,
+    photoURL: PropTypes.string,
+  }).isRequired,
+};
