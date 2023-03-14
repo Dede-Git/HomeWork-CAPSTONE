@@ -27,7 +27,7 @@
     "image": "https://www.fitnesseducation.edu.au/wp-content/uploads/2017/03/Pushups.jpg",
     "type": "arms",
     "name": "Push-Ups",
-    "uid": "7LPbUtC0RBfcujfV9kLUDDcvhLs1",
+    "uid": "",
     "level": "hard",
     "sets": "3",
     "reps": "33"
@@ -55,11 +55,11 @@
     "reps": "30s"
   },"-NN9jATJIOp61X8Mw9Z3": {
     "plan_id": "-NN9hu4Cp3rLynuqPzhA",
-    "firebaseKey": "-NN9jATJIOp61X8Mw9Z3",
+    "firebaseKey": "",
     "image": "https://blog.myfitnesspal.com/wp-content/uploads/2021/09/mfp-proper-plank-alignment.jpg",
     "type": "arms, abs, balance",
     "name": "Planks",
-    "uid": "7LPbUtC0RBfcujfV9kLUDDcvhLs1",
+    "uid": "",
     "level": "hard",
     "sets": "3",
     "reps": "60s"

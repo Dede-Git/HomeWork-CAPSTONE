@@ -4,7 +4,8 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { Button } from 'react-bootstrap';
 import Link from 'next/link';
-import { viewWorkoutDetails } from '../../api/mergedData';
+// import { viewWorkoutDetails } from '../../api/mergedData';
+import { getSingleWorkout } from '../../api/workoutData';
 
 export default function ViewWorkout() {
   const [workDetails, setWorkDetails] = useState({});
@@ -13,7 +14,7 @@ export default function ViewWorkout() {
   const { firebaseKey } = router.query;
 
   useEffect(() => {
-    viewWorkoutDetails(firebaseKey).then(setWorkDetails);
+    getSingleWorkout(firebaseKey).then(setWorkDetails);
   }, [firebaseKey]);
 
   return (
@@ -30,9 +31,11 @@ export default function ViewWorkout() {
             {workDetails.name}
           </h5>
           <hr />
-          <p className="PD-desc">{workDetails.sets || ''}
+          <p className="PD-desc">Type: {workDetails.type || ''}
           </p>
-          <p className="PD-desc">{workDetails.reps || ''}
+          <p className="PD-desc">Sets: {workDetails.sets || ''}
+          </p>
+          <p className="PD-desc">Reps: {workDetails.reps || ''}
           </p>
           <hr />
           <Link passHref href="/">

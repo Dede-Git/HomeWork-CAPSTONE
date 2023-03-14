@@ -2,14 +2,15 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Card, Button } from 'react-bootstrap';
 import Link from 'next/link';
-import { deletePlanWorkouts } from '../api/mergedData';
+// import { deletePlanWorkouts } from '../api/mergedData';
 import { useAuth } from '../utils/context/authContext';
+import { deleteSinglePlan } from '../api/planData';
 
 export default function PlanCard({ planObj, onUpdate }) {
   const { user } = useAuth();
-  const deleteSinglePlan = () => {
+  const deletePlan = () => {
     if (window.confirm(`Delete ${planObj.name}?`)) {
-      deletePlanWorkouts(planObj.firebaseKey).then(() => onUpdate());
+      deleteSinglePlan(planObj.firebaseKey).then(() => onUpdate());
     }
   };
 
@@ -29,7 +30,7 @@ export default function PlanCard({ planObj, onUpdate }) {
         </Link>
         <>
           {planObj.uid === user.uid ? (
-            <Button variant="outline-dark" className="m-2" onClick={deleteSinglePlan}>
+            <Button variant="outline-dark" className="m-2" onClick={deletePlan}>
               DELETE
             </Button>
           )

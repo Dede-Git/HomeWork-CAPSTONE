@@ -3,7 +3,7 @@ import { getEasyWorkouts } from '../../api/workoutData';
 import WorkoutCard from '../../components/WorkoutCard';
 
 export default function EasyWorkouts() {
-  const [easyWorkouts, setEasyWorkouts] = useState([]);
+  const [easy, setEasyWorkouts] = useState([]);
 
   const getAllEasyWorkouts = () => {
     getEasyWorkouts().then(setEasyWorkouts);
@@ -14,7 +14,7 @@ export default function EasyWorkouts() {
   }, []);
   return (
     <div className="easy-card-container, d-flex flex-wrap">
-      {easyWorkouts.map((easywork) => (
+      {easy.map((easywork) => (
         <WorkoutCard key={easywork.firebaseKey} workObj={easywork} onUpdate={getAllEasyWorkouts} />
       ))}
     </div>

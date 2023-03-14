@@ -3,9 +3,9 @@ import React, { useEffect, useState } from 'react';
 import { useRouter } from 'next/router';
 import { Button } from 'react-bootstrap';
 import Link from 'next/link';
-import { viewPlanDetails } from '../../api/mergedData';
+import viewPlanDetails from '../../api/mergedData';
 import { useAuth } from '../../utils/context/authContext';
-import ViewYourWorkouts from '../../components/ViewYourWorkouts';
+import WorkoutCard from '../../components/WorkoutCard';
 
 export default function ViewPlan() {
   const [planDetails, setPlanDetails] = useState({});
@@ -13,8 +13,12 @@ export default function ViewPlan() {
   const { user } = useAuth();
   const { firebaseKey } = router.query;
 
-  useEffect(() => {
+  const getAllWorkoutsByPlan = () => {
     viewPlanDetails(firebaseKey).then(setPlanDetails);
+  };
+
+  useEffect(() => {
+    getAllWorkoutsByPlan();
   }, [firebaseKey]);
 
   return (
@@ -31,8 +35,10 @@ export default function ViewPlan() {
           </div>
         </div>
       </div>
-      <div className="BD-pin-container">
-        <ViewYourWorkouts />
+      <div className="d-flex flex-wrap">
+        {planDetails.planWorkouts?.map((workout) => (
+          <WorkoutCard key={workout.firebaseKey} workObj={workout} onUpdate={getAllWorkoutsByPlan} />
+        ))}
       </div>
     </div>
   );

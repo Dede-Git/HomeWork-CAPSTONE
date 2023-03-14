@@ -113,7 +113,7 @@ function WorkoutForm({ obj }) {
             className="mb-3"
             value={formInput.plan_id}
           >
-            <option value="">Select a Plan</option>
+            <option value="">No Plan</option>
             {plans.map((plan) => (
               <option
                 key={plan.firebaseKey}
