@@ -3,8 +3,8 @@ import { clientCredentials } from '../utils/client';
 const dbUrl = clientCredentials.databaseURL;
 
 // FIXME:  GET ALL Workouts
-const getWorkouts = () => new Promise((resolve, reject) => {
-  fetch(`${dbUrl}/workouts.json`, {
+const getWorkouts = (uid) => new Promise((resolve, reject) => {
+  fetch(`${dbUrl}/workouts.json?orderBy="uid"&equalTo="${uid}"`, {
     method: 'GET',
     headers: {
       'Content-Type': 'application/json',
