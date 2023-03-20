@@ -1,9 +1,19 @@
+import { getExercisesByExPlan, getSingleExPlan } from './explanData';
 import { getSinglePlan, getWorkoutsByPlan } from './planData';
 // import { deleteSingleWorkout } from './workoutData';
 
 const viewPlanDetails = (firebaseKey) => new Promise((resolve, reject) => {
   getSinglePlan(firebaseKey).then((plan) => {
     getWorkoutsByPlan(plan.firebaseKey)
+      .then((planWorkouts) => {
+        resolve({ ...plan, planWorkouts });
+      });
+  }).catch(reject);
+});
+
+const viewExPlanDetails = (firebaseKey) => new Promise((resolve, reject) => {
+  getSingleExPlan(firebaseKey).then((plan) => {
+    getExercisesByExPlan(plan.firebaseKey)
       .then((planWorkouts) => {
         resolve({ ...plan, planWorkouts });
       });
@@ -21,4 +31,4 @@ const viewPlanDetails = (firebaseKey) => new Promise((resolve, reject) => {
 //   }).catch((error) => reject(error));
 // });
 
-export default viewPlanDetails;
+export { viewPlanDetails, viewExPlanDetails };
