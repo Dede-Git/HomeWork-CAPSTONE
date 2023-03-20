@@ -4,16 +4,19 @@ import React from 'react';
 // import PropTypes from 'prop-types';
 import Link from 'next/link';
 import {
-  Navbar, Container, Nav,
+  Navbar, Container, Nav, Image,
 } from 'react-bootstrap';
 import SearchBar from './searchBar';
-import Workout from '../images/Workout.png';
+// import logo from '../public/logo.png';
+import { useAuth } from '../utils/context/authContext';
 
 export default function NavBar() {
+  const { user } = useAuth();
+
   return (
     <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Nav.Link href="/"><img src={Workout} alt="PinTwist Logo" width={100} height={50} /></Nav.Link>
+        <Nav.Link href="/"><img src="./logo.png" alt="logo" width={100} height={60} /></Nav.Link>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse className="justify-content-end">
           <Nav className="ml-auto">
@@ -24,9 +27,9 @@ export default function NavBar() {
             <Link passHref href="/plan/new">
               <Nav.Link>Create Plan</Nav.Link>
             </Link>
-            <Link passHref href="/profile">
-              <Nav.Link>Profile</Nav.Link>
-            </Link>
+            <Nav.Link href="/profile">
+              <Image src={user.photoURL} alt="userURL" width="50px" height="50px" id="navbarprofile" />
+            </Nav.Link>
             <SearchBar />
           </Nav>
         </Navbar.Collapse>
