@@ -16,7 +16,7 @@ export default function ExPlanCard({ explanobj, onUpdate }) {
 
   return (
     <div>
-      <Card style={{ width: '18rem', margin: '10px' }} id="plancard">
+      <Card style={{ width: '18rem', margin: '10px' }} id="explancard">
         <Card.Img variant="top" src={explanobj.image} alt={explanobj.name} style={{ height: '400px' }} />
         <Card.Body>
           <Card.Title>{explanobj.name}</Card.Title>
