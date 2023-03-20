@@ -18,5 +18,17 @@ a {
 }
 
 body {
-  background-color: grey
+  background-color: DimGrey
+}
+
+#workcard {
+  background-color: slategrey
+}
+
+#plancard {
+  background-color: slategrey
+}
+
+#searchBar {
+  color: slategrey
 }

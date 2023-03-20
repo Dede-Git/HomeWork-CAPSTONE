@@ -15,8 +15,8 @@ function WorkoutCard({ workObj, onUpdate }) {
   };
 
   return (
-    <Card style={{ width: '18rem', margin: '10px' }}>
-      <Card.Img variant="top" src={workObj.image} alt={workObj.name} style={{ height: '400px' }} />
+    <Card style={{ width: '18rem', margin: '10px' }} id="workcard">
+      <Card.Img variant="top" src={workObj.image} alt={workObj.name} style={{ height: '200px' }} />
       <Card.Body>
         <Card.Title>{workObj.name}</Card.Title>
         <Card.Subtitle>Type: {workObj.type}</Card.Subtitle>

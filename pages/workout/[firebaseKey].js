@@ -24,7 +24,7 @@ export default function ViewWorkout() {
       </Head>
       <div className="PD-container">
         <div className="PD-photo-container">
-          <a href={workDetails.level} target="_tab"><img className="PD-photo" src={workDetails.image} alt={workDetails.name} /></a>
+          <a href={workDetails.level} target="_tab"><img className="PD-photo" src={workDetails.image} alt={workDetails.name} style={{ height: '400px', width: '600px' }} /></a>
         </div>
         <div className="PD-detail-container">
           <h5 className="PD-pin-name">
