@@ -36,7 +36,7 @@ export default function ViewExPlan() {
         </div>
       </div>
       <div className="d-flex flex-wrap">
-        {explanDetails.explanWorkouts?.map((exercise) => (
+        {explanDetails.explanExercises?.map((exercise) => (
           <ExerciseCard key={exercise.firebaseKey} exerciseobj={exercise} onUpdate={getAllExercisesByExPlan} />
         ))}
       </div>

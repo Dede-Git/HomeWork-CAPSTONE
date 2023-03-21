@@ -47,7 +47,7 @@ function ExerciseForm({ obj }) {
       createExercise(payload).then(({ name }) => {
         const patchPayloadFBK = { firebaseKey: name };
         updateExercise(patchPayloadFBK).then(() => {
-          router.push('/');
+          router.push('/exercises');
         });
       });
     }
@@ -62,10 +62,10 @@ function ExerciseForm({ obj }) {
         <div className="mt-5" />
         {/* name */}
         <div className="">Name</div>
-        <FloatingLabel controlId="floatingInput1" label="Exercise Name" className="mb-3">
+        <FloatingLabel controlId="floatingInput1" label="Stretch Name" className="mb-3">
           <Form.Control
             type="text"
-            placeholder="Exercise name..."
+            placeholder="Stretch name..."
             name="name"
             value={formInput.name}
             onChange={handleChange}
@@ -87,11 +87,11 @@ function ExerciseForm({ obj }) {
         </FloatingLabel>
 
         {/* Plan SELECT */}
-        <div className="">Select Exercise Plan</div>
+        <div className="">Select Stretch Plan</div>
         <FloatingLabel controlId="floatingSelect" label="Exercise Plan">
           <Form.Select
-            placeholder="Pick a Exercise Plan"
-            aria-label="Exercise Plan"
+            placeholder="Pick a Stretch Plan"
+            aria-label="Stretch Plan"
             name="explan_id"
             onChange={handleChange}
             className="mb-3"

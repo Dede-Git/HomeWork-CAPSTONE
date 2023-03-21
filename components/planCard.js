@@ -17,7 +17,7 @@ export default function PlanCard({ planObj, onUpdate }) {
   return (
     <div>
       <Card style={{ width: '18rem', margin: '10px' }} id="plancard">
-        <Card.Img variant="top" src={planObj.image} alt={planObj.name} style={{ height: '400px' }} />
+        <Card.Img variant="top" src={planObj.image} alt={planObj.name} style={{ height: '200px' }} />
         <Card.Body>
           <Card.Title>{planObj.name}</Card.Title>
           <Card.Body>{planObj.description}</Card.Body>

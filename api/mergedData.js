@@ -14,8 +14,8 @@ const viewPlanDetails = (firebaseKey) => new Promise((resolve, reject) => {
 const viewExPlanDetails = (firebaseKey) => new Promise((resolve, reject) => {
   getSingleExPlan(firebaseKey).then((plan) => {
     getExercisesByExPlan(plan.firebaseKey)
-      .then((planWorkouts) => {
-        resolve({ ...plan, planWorkouts });
+      .then((planExercises) => {
+        resolve({ ...plan, planExercises });
       });
   }).catch(reject);
 });
