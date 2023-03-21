@@ -33,13 +33,13 @@ export default function ExPlanForm({ obj }) {
     e.preventDefault();
     if (obj.firebaseKey) {
       updateExPlan(formInput)
-        .then(() => router.push('/explan'));
+        .then(() => router.push('/explans'));
     } else {
       const payload = { ...formInput, uid: user.uid };
       createExPlan(payload).then(({ name }) => {
         const patchPayloadFBK = { firebaseKey: name };
         updateExPlan(patchPayloadFBK).then(() => {
-          router.push('/explan');
+          router.push('/explans');
         });
       });
     }
@@ -52,7 +52,7 @@ export default function ExPlanForm({ obj }) {
       <Form onSubmit={handleSubmit} className="text-color-drkblu">
         <h2 className="mt-5 text-center">{obj.firebaseKey ? `Update ${obj.name}` : 'Create Plan'}</h2>
         <div className="mt-5" />
-        <div className=""> Exercise Plan Name</div>
+        <div className=""> Stretch Plan Name</div>
         <FloatingLabel
           controlId="floatingInput1"
           label="Exercise Plan Name"
@@ -77,13 +77,13 @@ export default function ExPlanForm({ obj }) {
             type="text"
             placeholder="Exercise Plan Description"
             style={{ height: '100px' }}
-            name="Exercise Plan Description"
+            name="description"
             value={formInput.description}
             onChange={handleChange}
             required
           />
         </FloatingLabel>
-        <div className="">Exercise Plan Cover Image URL</div>
+        <div className="">Stretch Plan Cover Image URL</div>
         <FloatingLabel
           controlId="floatingInput3"
           label="Image URL"
