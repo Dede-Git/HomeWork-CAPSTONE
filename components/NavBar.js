@@ -26,12 +26,12 @@ export default function NavBar() {
             navbarScroll
           >
             <Nav.Link href="/exercises">Stretches</Nav.Link>
-            <Nav.Link href="/explans">Stretch Plans</Nav.Link>
+            {/* <Nav.Link href="/explans">Stretch Plans</Nav.Link> */}
             <NavDropdown title="Create" id="navbarScrollingDropdown">
               <NavDropdown.Item href="/workout/new">Create Workout</NavDropdown.Item>
               <NavDropdown.Item href="/plan/new">Create Plan</NavDropdown.Item>
-              <NavDropdown.Item href="/exercise/new">Create Exercise</NavDropdown.Item>
-              <NavDropdown.Item href="/explan/new">Create Exercise Plan</NavDropdown.Item>
+              <NavDropdown.Item href="/exercise/new">Create Stretch</NavDropdown.Item>
+              {/* <NavDropdown.Item href="/explan/new">Create Stretch Plan</NavDropdown.Item> */}
             </NavDropdown>
           </Nav>
           <SearchBar className="d-flex" />
