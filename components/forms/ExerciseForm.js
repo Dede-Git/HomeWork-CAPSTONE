@@ -17,7 +17,7 @@ const initialState = {
 
 function ExerciseForm({ obj }) {
   const [formInput, setFormInput] = useState(initialState);
-  const [explans, setExPlans] = useState([]);
+  const [, setExPlans] = useState([]);
   const router = useRouter();
   const { user } = useAuth();
 
@@ -87,7 +87,7 @@ function ExerciseForm({ obj }) {
         </FloatingLabel>
 
         {/* Plan SELECT */}
-        <div className="">Select Stretch Plan</div>
+        {/* <div className="">Select Stretch Plan</div>
         <FloatingLabel controlId="floatingSelect" label="Exercise Plan">
           <Form.Select
             placeholder="Pick a Stretch Plan"
@@ -107,7 +107,7 @@ function ExerciseForm({ obj }) {
               </option>
             ))}
           </Form.Select>
-        </FloatingLabel>
+        </FloatingLabel> */}
 
         {/* IMAGE INPUT  */}
         <div className="">Image URL</div>
