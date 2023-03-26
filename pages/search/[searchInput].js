@@ -2,7 +2,7 @@
 import { useRouter } from 'next/router';
 import React, { useEffect, useState } from 'react';
 import { getWorkouts } from '../../api/workoutData';
-import WorkoutCard from '../../components/WorkoutCard';
+import WorkoutCard from '../../components/workoutCard';
 import { useAuth } from '../../utils/context/authContext';
 
 export default function SearchResult() {

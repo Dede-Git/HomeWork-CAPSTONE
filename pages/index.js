@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import { useEffect, useState } from 'react';
 import { getWorkouts } from '../api/workoutData';
-import WorkoutCard from '../components/WorkoutCard';
+import WorkoutCard from '../components/workoutCard';
 import { useAuth } from '../utils/context/authContext';
 
 function Home() {

@@ -3,7 +3,7 @@
 import React, { useEffect, useState } from 'react';
 import { Button } from 'react-bootstrap';
 import { getPlans } from '../api/planData';
-import PlanCard from '../components/PlanCard';
+import PlanCard from '../components/planCard';
 import { signOut } from '../utils/auth';
 import { useAuth } from '../utils/context/authContext';
 
